@@ -10,15 +10,16 @@ import java.io.IOException
 
 abstract class RemoteDataSource {
 
-    abstract suspend fun getClimate(exclude  : String, latitude : String, longitude : String) : NetworkResult< NetworkResult<Daily> >
+    abstract suspend fun getClimate(unit : String, exclude  : String, latitude : String, longitude : String) : NetworkResult
 
-    protected suspend fun <T> safeApiCall(apiCall: suspend () -> T): NetworkResult<T> {
+    protected suspend fun  safeApiCall(apiCall: suspend () -> Daily): NetworkResult {
         return withContext(Dispatchers.IO) {
             try {
                 val response = apiCall.invoke()
                 return@withContext NetworkResult(result = response)
             } catch (throwable: Throwable) {
-                return@withContext NetworkResult<T>(networkError = createError(throwable))
+                throwable.printStackTrace()
+                return@withContext NetworkResult(networkError = createError(throwable))
             }
         }
     }

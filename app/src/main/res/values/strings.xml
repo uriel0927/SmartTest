@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Smart Payments Test</string>
+
+    <string name="str_max"><b>Maximo: </b> %sº</string>
+    <string name="str_min"><b>Minimo: </b> %sº</string>
+    <string name="str_morning"><b>Mañana: </b> %sº</string>
+    <string name="str_nigth"><b>Noche: </b> %sº</string>
+
+    <string name="str_message_error_network">Ocurrio un error de conexíón</string>
+    <string name="str_message_error_api">Ocurrio un error al obtener el resultado</string>
+    <string name="str_message_error_desconocido">Ocurrio un error.</string>
+
 </resources>

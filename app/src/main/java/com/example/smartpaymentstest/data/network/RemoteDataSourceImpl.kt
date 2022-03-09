@@ -1,10 +1,6 @@
 package com.example.smartpaymentstest.data.network
 
 
-import com.example.smartpaymentstest.BuildConfig
-import com.example.smartpaymentstest.data.network.model.ApiListResponse
-import com.example.smartpaymentstest.data.network.model.Daily
-import com.example.smartpaymentstest.data.network.model.Forecast
 import com.example.smartpaymentstest.data.network.model.NetworkResult
 import javax.inject.Inject
 
@@ -12,6 +8,7 @@ class RemoteDataSourceImpl @Inject constructor(private val apiForecast: ApiForec
     RemoteDataSource() {
 
     override suspend fun getClimate(
+        units: String,
         exclude: String,
         latitude: String,
         longitude: String
@@ -20,8 +17,9 @@ class RemoteDataSourceImpl @Inject constructor(private val apiForecast: ApiForec
             apiForecast.getForecastWeather(
                 latitude = latitude,
                 longitude = longitude,
-                apiKey = BuildConfig.APIKEY,
-                exclude = exclude
+                apiKey = "9da845bea0d45be2eb6fe09088705c79",
+                exclude = exclude,
+                units = units
             )
         }
 }

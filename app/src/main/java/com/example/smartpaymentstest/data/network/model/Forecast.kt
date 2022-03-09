@@ -6,7 +6,8 @@ data class Forecast(
     @SerializedName("dt") val dateTime: Long,
     val sunrise: Long,
     val sunset: Long,
-    @SerializedName("temp")val list : Temperature
+    @SerializedName("temp")val temp : Temperature,
+    val weather : List<Weather>
 )
 
 

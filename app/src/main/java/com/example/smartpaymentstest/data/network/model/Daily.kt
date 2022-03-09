@@ -7,4 +7,5 @@ data class Daily (
     val lon : Float,
     val timezone : String,
     @SerializedName("timezone_offset")val timezoneOffset : Long,
-    val daily : List<Forecast>)
+    val daily : List<Forecast>
+     )
